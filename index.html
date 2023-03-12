@@ -1,17 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/style.css" type="text/css">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week17</title>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
 </head>
 
 <body>
-
-
+    <div class="wrapper_colored">
+        <div class="wrapper">
+            <header>
+                <h1>Сервис комментариев со спам фильтром</h1>
+            </header>
+            <main>
+                <section>
+                    <h2>Оставьте ваш комментарий</h2>
+                    <div class="author">
+                        <span>Показывать ваше имя?</span>
+                        <label for="yes">Yes<input type="radio" name="author" value="yes" id="yes" /></label>
+                        <label for="no">No<input type="radio" name="author" value="no" id="no" /></label>
+                    </div>
+                    <div class="name">
+                        <label for="name">Введите ваше <strong>Имя</strong>:</label>
+                        <input type="text" id="name" name="name" />
+                    </div>
+                    <div class="avatar">
+                        <label for="name">Введите ссылку <strong>вашего аватара</strong>:</label>
+                        <input type="text" id="avatar" name="avatar" />
+                    </div>
+                    <div class="comment">
+                        <p>Оставьте комментарий:</p>
+                        <textarea name="comment" id="comment"></textarea>
+                        <button class="button" type="button" id="send">Отправить</button>
+                    </div>
+                </section>
+                <section class="chat">
+                    <h2>Чат</h2>
+                    <div class="messages"></div>
+                </section>
+            </main>
+            <footer></footer>
+        </div>
+    </div>
     <script src="./assets/scripts/index.js"></script>
 </body>
 

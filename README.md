@@ -51,3 +51,34 @@ console.log(y); // 2023 - год в формате 4 цифр из обьект�
 let y = new Date(); 
 let d = y.getDate();
 console.log(d);
+
+непонятно зачем присваивать из переменной Y дату к новой переменной D и выводить это в консоль.
+можно сделать проще:
+let y = new Date(); 
+console.log(y.getDate());
+
+
+
+
+/ --------------- Задание со звездочкой **** ---------------- /
+function formatDate (date) {
+  let day = date.getDay();
+  let month = date.getMonth()+1;
+  let year = date.getFullYear();
+  let hour = date.getHour();
+  let minutes = date.getMinutes();
+  let differentMs = newDate() - date;
+  let differentSec = Math.round(differentMs/1000);
+  let differentMin = differentSec/60;
+  let differentHour = differentMin/60;
+
+  if (diffSec < 1) {
+    return 'прямо сейчас';
+  } else if (diffMin < 1) {
+    return `${diffSec} сек. назад`
+  } else if (diffHour < 1) {
+    return `${diffMin} мин. назад`
+  } else {
+    return `${day}.${month}.${year} ${hour}:${minutes}`
+  }
+}
