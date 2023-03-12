@@ -72,12 +72,12 @@ function formatDate (date) {
   let differentMin = differentSec/60;
   let differentHour = differentMin/60;
 
-  if (diffSec < 1) {
+  if (differentSec < 1) {
     return 'прямо сейчас';
-  } else if (diffMin < 1) {
-    return `${diffSec} сек. назад`
-  } else if (diffHour < 1) {
-    return `${diffMin} мин. назад`
+  } else if (differentMin < 1) {
+    return `${differentSec} сек. назад`
+  } else if (differentHour < 1) {
+    return `${differentMin} мин. назад`
   } else {
     return `${day}.${month}.${year} ${hour}:${minutes}`
   }
