@@ -5,7 +5,6 @@ const sendBtn = document.querySelector("#send");
 const chbInput_yes = document.querySelector("#yes");
 const chbInput_no = document.querySelector("#no");
 
-console.log(chb_no);
 // field chat
 const messages = document.querySelector(".messages");
 
@@ -28,14 +27,12 @@ nameInput.addEventListener("change", () => {
 });
 
 // check textarea
-
 const checkMessage = (spam) => {
     const str = spam.replace(/viagra|виагра|ххх|xxx/gi, "***");
     return str;
 };
 
 // send message
-
 const createMessage = () => {
     const message = document.createElement("div");
     message.className = "message";
@@ -49,15 +46,62 @@ const createMessage = () => {
     } else {
     messageUserName.textContent = "Username";
     }
-    message.append(messageUserName);
+    messages.append(messageUserName);
 
 // text
     const messageText = document.createElement("p");
     messageText.className = "message_text";
     messageText.innerHTML = checkMessage(textarea.value);
-    message.append(messageText);
+    messages.append(messageText);
     nameInput.value = "";
     avatarInput.value = "";
+
+//send avatar
+    const messageAvatar = document.createElement("img");
+    messageAvatar.className = "message_avatar";
+    let avatarRandom = Math.round(Math.random() * 10 - 4);
+
+    function addAvatar () {
+        if (avatarInput.value !== '') {
+            messageAvatar.src = avatarInput.value;
+        } else {
+            switch (avatarRandom) {
+                    case 1:
+                    messageAvatar.src = '../images/pic1.png';
+                    break;
+
+                    case 2:
+                    messageAvatar.src = '../images/pic2.png';
+                    break;
+
+                    case 3:
+                    messageAvatar.src = '../images/pic3.png';
+                    break;
+
+                    case 4:
+                    messageAvatar.src = '../images/pic4.png';
+                    break;
+
+                    case 5:
+                    messageAvatar.src = '../images/pic5.png';
+                    break;
+
+                    case 6:
+                    messageAvatar.src = '../images/pic6.png';
+                    break;
+
+                default:
+                    messageAvatar.src = '../images/pic6.png';
+            }
+        }
+    }
+
+//add date
+    const messageDate = document.createElement('div');
+    messageDate.classList.add('post-item-date');
+    messages.append(messageDate);
+    messageDate.textContent = now.toLocaleString();
+
 
 // remove over 5 elements
     if (messages.childElementCount > 5) {
@@ -67,7 +111,7 @@ const createMessage = () => {
 
 sendBtn.addEventListener("click", () => {
     createMessage();
-    const img = 
+    addAvatar();
     textarea.value = "";
 });
 
